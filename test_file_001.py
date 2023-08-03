@@ -1,3 +1,5 @@
+#create new project
+#add new interpreter--local interpreter--automatically all interpreter download zale ki venv library root mhnun folder yeto
 # config interpreter
 # pip install selenium
 # pip install pytest - for test run
@@ -5,8 +7,8 @@
 # pip install pytest-xdist - to run parallel
 # pip install allure-pytest - to generate allure report
 # Select pytest as default runner in python (Go to setting --> Tools-->integrated Tools
-#  to run specific file with abs file path --> pytest -v -n=4 --html=Report/myreport.html "D:\Credence Class Notes
-# \CredenceBatches\CredenceBatch#14 & 15\Pytest_July\test_file_002.py"
+#  to run specific file with abs file path --> pytest -v -n=4 --html=Report/myreport.html "D:\pytest_july\allure-results"
+
 import allure
 from selenium import webdriver
 import pytest
@@ -22,8 +24,6 @@ import pytest
 # To run specific file in project dir --> pytest filename.py (eg. pytest test_file_001.py)
 # To run testcases parallel --> pytest -n=number (eg. pytest -n=2) number--> worker processor
 # To generate html report --> (pytest --html=Reports/report.html)
-# To set marker for testcases use @pytest.marker.marker_name before testcase
-# to run testcases with use define marker--> pytest -m credence
 
 class Test_Credence_001:
 
@@ -49,7 +49,7 @@ class Test_Credence_001:
             driver.close()
             assert False
 
-    @pytest.mark.xfail
+    @pytest.mark.xfail            ###he decorator use kelot mhnun output mdhe he fail yeil
     def test_sub_003(self):
         a = 3
         b = 7
@@ -59,3 +59,15 @@ class Test_Credence_001:
             assert True
         else:
             assert False
+
+##khalche srve terminal mdhe run krun bgha
+
+##pytest
+# pytest -v
+# pytest -v -s
+# pytest -n=2
+# pytest test_file_001.py
+# pytest -v -s --html=Reports/report.html
+# pytest --html=Reports/report.html --alluredir="copy path allure reportcha"
+# pytest --alluredir="copy path allure reportcha"
+# allure serve "copy path allure reportcha"

@@ -1,3 +1,7 @@
+# To set marker for testcases use @pytest.marker.marker_name before testcase
+# to run testcases with use define marker--> pytest -m credence
+
+
 import pytest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
